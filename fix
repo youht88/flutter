@@ -1,0 +1,6 @@
+if [ -e "./android/fixed.lock" ]  ;then
+  echo "You have fixed!!"
+else
+  sed -i "/google()/a\\\tmaven { url 'http:\/\/maven.aliyun.com\/nexus\/content\/groups\/public\/' }" ./android/build.gradle
+  touch ./android/fixed.lock
+fi
