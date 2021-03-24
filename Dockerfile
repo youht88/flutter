@@ -20,9 +20,9 @@ ENV PATH=$PATH:$JAVA_HOME/bin
 
 #add android-sdk
 RUN mkdir -p /opt/android/sdk
-COPY cmdline-tools /opt/android/sdk/cmdline-tools
+COPY cmdline-tools /opt/android/sdk/cmdline-tools/latest
 ENV ANDROID_SDK=/opt/android/sdk
-ENV PATH=$PATH:$ANDROID_SDK/cmdline-tools/bin:$ANDROID_SDK/platform-tools
+ENV PATH=$PATH:$ANDROID_SDK/cmdline-tools/latest/bin:$ANDROID_SDK/platform-tools
 
 RUN yes | sdkmanager --sdk_root=$ANDROID_SDK "platforms;android-28"
 RUN yes | sdkmanager --sdk_root=$ANDROID_SDK "platforms;android-30"
